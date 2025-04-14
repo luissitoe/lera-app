@@ -70,7 +70,7 @@
 
                 </div>
                 <div class="flex justify-end mt-5">
-                    <a href="{{ route('books.index') }}" class="btn--primary" type="submit">Registar Livro</a>
+                    <a href="{{ route('books.save') }}" class="btn--primary" type="submit">Registar Livro</a>
                 </div>
             </form>
             <!-- validation errors -->
