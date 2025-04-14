@@ -1,0 +1,56 @@
+[
+  {
+    "nome": "Robert Kiyosaki",
+    "data_nascimento": "1947-04-08",
+    "nacionalidade": "Americano",
+    "biografia": "Robert Kiyosaki é um empresário, investidor e autor reconhecido mundialmente por seu trabalho na área de educação financeira. Ele se tornou famoso pelo best-seller 'Pai Rico, Pai Pobre', que desafiou as crenças convencionais sobre dinheiro e investimento. Através de uma linguagem simples e exemplos práticos, Kiyosaki defende a importância da alfabetização financeira desde cedo, focando em ativos, passivos e a geração de renda passiva."
+  },
+  {
+    "nome": "Napoleon Hill",
+    "data_nascimento": "1883-10-26",
+    "nacionalidade": "Americano",
+    "biografia": "Napoleon Hill foi um dos primeiros autores do gênero de autoajuda e desenvolvimento pessoal. Sua obra mais conhecida, 'Pense e Enriqueça', é considerada um clássico atemporal que influenciou gerações de empreendedores e líderes. Hill entrevistou centenas de milionários de sua época, incluindo Andrew Carnegie, para descobrir os princípios comuns que levaram ao sucesso. Sua filosofia gira em torno do poder do pensamento positivo, da autoconfiança e da persistência."
+  },
+  {
+    "nome": "Robert Greene",
+    "data_nascimento": "1959-05-14",
+    "nacionalidade": "Americano",
+    "biografia": "Robert Greene é um autor renomado na área de estratégias de poder, psicologia e comportamento humano. Seus livros, como 'As 48 Leis do Poder' e 'A Arte da Sedução', exploram as dinâmicas sociais e estratégias utilizadas por líderes e figuras históricas para alcançar sucesso e influência. Seu estilo é direto, provocativo e baseado em pesquisas históricas profundas e exemplos reais."
+  },
+  {
+    "nome": "Sun Tzu",
+    "data_nascimento": "-544",
+    "nacionalidade": "Chinês",
+    "biografia": "Sun Tzu foi um general, estrategista militar e filósofo chinês, autor de 'A Arte da Guerra', um tratado clássico sobre estratégia e liderança. Apesar de ter vivido há mais de 2.500 anos, suas ideias ainda são amplamente aplicadas em negócios, política e gestão. Ele acreditava que vencer sem lutar era a maior forma de sabedoria e que conhecer a si mesmo e ao inimigo era essencial para o sucesso."
+  },
+  {
+    "nome": "Eckhart Tolle",
+    "data_nascimento": "1948-02-16",
+    "nacionalidade": "Alemão",
+    "biografia": "Eckhart Tolle é um mestre espiritual e autor de livros transformadores sobre consciência, presença e espiritualidade. Sua obra 'O Poder do Agora' inspirou milhões de pessoas a buscar uma vida mais consciente, pacífica e livre do sofrimento mental. Tolle enfatiza a importância de viver o momento presente e desconectar-se da identificação excessiva com o ego e os pensamentos negativos."
+  },
+  {
+    "nome": "Walter Isaacson",
+    "data_nascimento": "1952-05-20",
+    "nacionalidade": "Americano",
+    "biografia": "Walter Isaacson é um jornalista, escritor e professor universitário conhecido por suas biografias de grandes gênios da humanidade. Ele é autor de best-sellers como 'Steve Jobs', 'Leonardo da Vinci' e 'Einstein: Sua Vida, Seu Universo'. Isaacson é elogiado pela profundidade de sua pesquisa e pela forma como humaniza figuras complexas, revelando tanto suas conquistas quanto suas falhas."
+  },
+  {
+    "nome": "Mia Couto",
+    "data_nascimento": "1955-07-05",
+    "nacionalidade": "Moçambicano",
+    "biografia": "Mia Couto, nome literário de António Emílio Leite Couto, é um dos escritores mais renomados de Moçambique e da literatura lusófona. Autor de romances, contos e poesias, é conhecido por seu estilo lírico, uso criativo da língua portuguesa e mistura de realidade com mitologia africana. Seus livros exploram temas como identidade, pós-colonialismo, memória e espiritualidade, muitas vezes ambientados em paisagens moçambicanas carregadas de simbolismo."
+  },
+  {
+    "nome": "Paulina Chiziane",
+    "data_nascimento": "1955-06-04",
+    "nacionalidade": "Moçambicana",
+    "biografia": "Paulina Chiziane foi a primeira mulher moçambicana a publicar um romance. Suas obras abordam as complexidades da condição feminina em Moçambique, destacando temas como poligamia, tradição, emancipação e conflitos sociais. Sua escrita é marcada por um profundo conhecimento das culturas locais e um compromisso com a justiça social. Em 2021, foi laureada com o Prêmio Camões, o maior reconhecimento da literatura em língua portuguesa."
+  },
+  {
+    "nome": "Ungulani Ba Ka Khosa",
+    "data_nascimento": "1957-08-01",
+    "nacionalidade": "Moçambicano",
+    "biografia": "Ungulani Ba Ka Khosa é um dos principais nomes da literatura moçambicana contemporânea. Seus romances combinam crítica social, ironia e uma visão profunda da história de Moçambique. Conhecido por obras que questionam as narrativas oficiais do colonialismo e da guerra, Khosa desafia o leitor com personagens complexos e tramas intensas que exploram as feridas e esperanças do país."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "titulo": "Pai Rico, Pai Pobre",
+    "isbn": "978-85-352-1352-8",
+    "ano_publicacao": 1997,
+    "descricao": "Este livro revolucionou a forma como milhões de pessoas encaram o dinheiro. Em 'Pai Rico, Pai Pobre', Robert Kiyosaki apresenta lições valiosas que aprendeu com seu 'pai rico', incentivando a busca por liberdade financeira por meio de investimentos, educação financeira e empreendedorismo. O livro quebra mitos tradicionais sobre dinheiro e defende que a escola não ensina o que realmente importa quando se trata de finanças pessoais."
+  },
+  {
+    "titulo": "Mais Esperto que o Diabo",
+    "isbn": "978-85-508-0012-3",
+    "ano_publicacao": 2011,
+    "descricao": "Escrito em 1938 e publicado postumamente, este livro é uma entrevista fictícia de Napoleon Hill com o 'Diabo', onde ele revela os maiores obstáculos que impedem o sucesso das pessoas. Hill expõe o medo, a procrastinação, a distração e a falta de autodisciplina como armas do fracasso, incentivando o leitor a assumir o controle da própria mente e destino."
+  },
+  {
+    "titulo": "Pense e Enriqueça",
+    "isbn": "978-85-508-0003-1",
+    "ano_publicacao": 1937,
+    "descricao": "Baseado em mais de 20 anos de pesquisa com alguns dos homens mais ricos do mundo, este livro traz os princípios fundamentais para alcançar o sucesso pessoal e financeiro. Napoleon Hill ensina como o desejo, a fé, a persistência e o poder do pensamento são elementos-chave na realização de qualquer objetivo."
+  },
+  {
+    "titulo": "A Arte da Guerra",
+    "isbn": "978-85-356-1102-0",
+    "ano_publicacao": -500,
+    "descricao": "Clássico da estratégia militar e filosofia oriental, 'A Arte da Guerra' de Sun Tzu é um manual atemporal sobre liderança, planejamento e inteligência. Suas lições são aplicáveis não apenas no campo de batalha, mas também nos negócios e na vida pessoal. A obra destaca a importância da preparação, do conhecimento e da flexibilidade diante dos desafios."
+  },
+  {
+    "titulo": "Mestria",
+    "isbn": "978-85-508-0272-1",
+    "ano_publicacao": 2012,
+    "descricao": "Neste livro, Robert Greene explora o caminho para se tornar um verdadeiro mestre em qualquer área. Com base em exemplos de personalidades como Leonardo da Vinci, Mozart e Charles Darwin, Greene mostra que a mestria não é um talento nato, mas o resultado de esforço deliberado, paciência e dedicação intensa ao ofício."
+  },
+  {
+    "titulo": "As 48 Leis do Poder",
+    "isbn": "978-85-356-1867-8",
+    "ano_publicacao": 1998,
+    "descricao": "Uma análise fria e realista das leis que regem o jogo do poder. Robert Greene compila estratégias usadas por líderes, reis, espiões e pensadores ao longo da história para conquistar, manter e expandir o poder. O livro é provocador, direto e muitas vezes controverso — um guia essencial para quem quer entender os bastidores da influência e do comando."
+  },
+  {
+    "titulo": "O Poder do Agora",
+    "isbn": "978-85-7542-061-6",
+    "ano_publicacao": 1997,
+    "descricao": "Obra-prima de Eckhart Tolle sobre espiritualidade prática, este livro convida o leitor a se libertar da tirania do passado e da ansiedade pelo futuro. Através de linguagem clara e exercícios conscientes, Tolle mostra como encontrar paz interior e propósito na única realidade que existe: o momento presente."
+  },
+  {
+    "titulo": "Steve Jobs",
+    "isbn": "978-85-508-0023-9",
+    "ano_publicacao": 2011,
+    "descricao": "Biografia oficial de um dos maiores visionários do século XXI. Escrito por Walter Isaacson, este livro revela os bastidores da criação da Apple, os altos e baixos da carreira de Steve Jobs, e sua personalidade complexa e intensa. Com base em mais de 40 entrevistas com Jobs e dezenas de fontes próximas, é um retrato profundo e fascinante do homem que reinventou a tecnologia e a cultura digital."
+  },
+  {
+    "titulo": "Terra Sonâmbula",
+    "isbn": "978-972-21-1581-1",
+    "ano_publicacao": 1992,
+    "descricao": "Considerado um dos maiores romances africanos do século XX, 'Terra Sonâmbula' é uma narrativa poética e poderosa sobre a guerra civil moçambicana. Mia Couto entrelaça duas histórias — a de um velho e um menino que viajam por estradas devastadas, e a de um diário encontrado num ônibus queimado — criando um universo onde realidade e sonho se confundem, revelando os traumas e esperanças de um povo."
+  },
+  {
+    "titulo": "Niketche: Uma História de Poligamia",
+    "isbn": "978-972-21-1671-9",
+    "ano_publicacao": 2002,
+    "descricao": "Neste romance corajoso e provocador, Paulina Chiziane mergulha no universo da poligamia em Moçambique, revelando as dores, lutas e sabedorias das mulheres. A protagonista descobre que o marido mantém outras esposas e decide confrontá-las não com ódio, mas com empatia e solidariedade. A obra é uma crítica à opressão patriarcal e uma celebração da resistência feminina."
+  },
+  {
+    "titulo": "Ualalapi",
+    "isbn": "978-972-21-1105-9",
+    "ano_publicacao": 1987,
+    "descricao": "Em 'Ualalapi', Ungulani Ba Ka Khosa revisita a história de Gungunhana, o último imperador de Gaza, desconstruindo o herói tradicional e apresentando uma visão mais sombria e humana de sua figura. A narrativa mistura ficção e fatos históricos para refletir sobre a violência, o poder e a complexidade da história africana, especialmente no contexto do colonialismo português."
+  }
+]
