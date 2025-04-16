@@ -19,6 +19,30 @@ class LivroBuilder
         return $this;
     }
 
+    public function setTitulo($titulo)
+    {
+        $this->data['titulo'] = $titulo;
+        return $this;
+    }
+
+    public function setAnoPublicacao($anoPublicacao)
+    {
+        $this->data['ano_publicacao'] = $anoPublicacao;
+        return $this;
+    }
+
+    public function setDescricao($descricao)
+    {
+        $this->data['descricao'] = $descricao;
+        return $this;
+    }
+
+    public function setISBN($ISBN)
+    {
+        $this->data['isbn'] = $ISBN;
+        return $this;
+    }
+
     public function setAutores(array $autores): static
     {
         $this->autores = $autores;

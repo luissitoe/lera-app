@@ -7,11 +7,17 @@ use App\Http\Controllers\LivroController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Livro;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function (Request $request) {
     $livros = Livro::with('autores', 'generos')->latest()->get();
     return view('welcome', compact('livros'));
-})->name('home');
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::post('logout', function () {
+    Auth::logout();
+    return redirect('/books.index');
+})->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

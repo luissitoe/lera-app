@@ -13,7 +13,8 @@
                         <th class="border border-border px-4 py-2">#</th>
                         <th class="border border-border px-4 py-2">Título</th>
                         <th class="border border-border px-4 py-2">Autor</th>
-                        <th class="border border-border px-4 py-2">Tipo</th>
+                        <th class="border border-border px-4 py-2">Ano de Publicação</th>
+                        <th class="border border-border px-4 py-2">ISBN</th>
                         <th class="border border-border px-4 py-2">Ações</th>
                     </tr>
                 </thead>
@@ -24,7 +25,8 @@
                             <td class="border border-border px-4 py-2">{{ $livro->titulo }}</td>
                             <td class="border border-border px-4 py-2">{{ $livro->autores->pluck('nome')->join(',') }}
                             </td>
-                            <td class="border border-border px-4 py-2"></td>
+                            <td class="border border-border px-4 py-2">{{ $livro->ano_publicacao }}</td>
+                            <td class="border border-border px-4 py-2">{{ $livro->isbn }}</td>
                             <td class="border border-border px-4 py-2 flex gap-2">
                                 <a href="{{ route('books.edit', $livro->id) }}"
                                     class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Editar</a>

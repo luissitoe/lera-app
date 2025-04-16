@@ -25,7 +25,6 @@ class LivroController extends Controller
         return view('books.index', compact('livros'));
     }
 
-
     // Listar os livros
     /*  public function index(Request $request)
         {
@@ -62,7 +61,10 @@ class LivroController extends Controller
         ]);
 
         $livro = (new LivroBuilder)
-            ->setDados($validated)
+            ->setTitulo($validated['titulo'])
+            ->setAnoPublicacao($validated['ano_publicacao'])
+            ->setISBN($validated['isbn'])
+            ->setDescricao($validated['descricao'])
             ->setImagem($request->file('imagem'))
             ->setAutores($request->autores)
             ->setGeneros($request->generos)
@@ -82,7 +84,7 @@ class LivroController extends Controller
     //     return view('books.edit', compact('autores', 'generos'));
     // }
 
-    public function update(Request $request, )
+    public function update(Request $request,)
     {
         $validated = $request->validate([
             'titulo' => 'required|string|max:255',
@@ -117,7 +119,8 @@ class LivroController extends Controller
     }
 
     public function edit($id)
-    {  $autores = Autor::all();
+    {
+        $autores = Autor::all();
         $generos = Genero::all();
         $livro = Livro::with(['autores', 'generos'])->findOrFail($id);
         return view('books.edit', compact('livro'));
@@ -125,7 +128,7 @@ class LivroController extends Controller
 
 
 
-   
+
 
     public function destroy($id)
     {

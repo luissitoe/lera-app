@@ -27,6 +27,13 @@
                     <li>
                         <a class="nav__link" href="{{ route('books.create') }}">Livros</a>
                     </li>
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            <button class="nav__link bg-black py-3 rounded-[10px] px-3 text-white"
+                                href="{{ route('logout') }}">Terminar
+                                Sessão</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>
