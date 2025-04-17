@@ -8,6 +8,7 @@ use App\Models\Livro;
 use Illuminate\Http\Request;
 
 use App\Builders\LivroBuilder;
+use App\Builders\LivroDirector;
 
 class LivroController extends Controller
 {
@@ -58,9 +59,33 @@ class LivroController extends Controller
             'formato' => 'required|in:fisico,digital,audiobook',
             'autores' => 'required|array|exists:autors,id',
             'generos' => 'required|array|exists:generos,id',
+            'arquivo' => 'nullable|mimes:pdf,epub,mobi|max:10240',
+            'peso' => 'nullable|numeric',
+            'dimensoes' => 'nullable|string',
+            'quantidade' => 'nullable|string',
+            'narrador' => 'nullable|string',
+            'tempo_duracao' => 'nullable|integer',
         ]);
 
-        $livro = (new LivroBuilder)
+        if ($request->hasFile('imagem')) {
+            $validated['imagem'] = $request->file('imagem')->store('capas', 'public');
+        }
+
+        // Upload de arquivo digital
+        if ($request->hasFile('arquivo')) {
+            $validated['arquivo'] = $request->file('arquivo')->store('ebooks', 'public');
+        }
+
+        $builder = new LivroBuilder();
+        $director = new LivroDirector($builder);
+
+        $livro = $director->build($validated);
+        $livro->autores()->attach($request->autores);
+        $livro->generos()->attach($request->generos);
+
+        return redirect()->route('books.create')->with('success', 'Livro registado com sucesso!');
+
+        /*$livro = (new LivroBuilder)
             ->setTitulo($validated['titulo'])
             ->setAnoPublicacao($validated['ano_publicacao'])
             ->setISBN($validated['isbn'])
@@ -68,13 +93,11 @@ class LivroController extends Controller
             ->setImagem($request->file('imagem'))
             ->setAutores($request->autores)
             ->setGeneros($request->generos)
-            ->build();
+            ->build();*/
 
         /*   $livro = Livro::create($validated);
         $livro->autores()->attach($request->autores);
         $livro->generos()->attach($request->generos); */
-
-        return redirect()->route('books.create')->with('success', 'Livro registado com sucesso!');
     }
 
     // public function edit()
@@ -97,12 +120,12 @@ class LivroController extends Controller
             'generos' => 'required|array|exists:generos,id',
         ]);
 
-        $livro = (new LivroBuilder)
+        /*$livro = (new LivroBuilder)
             ->setDados($validated)
             ->setImagem($request->file('imagem'))
             ->setAutores($request->autores)
             ->setGeneros($request->generos)
-            ->build();
+            ->build();*/
 
         /*   $livro = Livro::create($validated);
         $livro->autores()->attach($request->autores);

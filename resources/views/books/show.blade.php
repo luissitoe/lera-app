@@ -1,8 +1,8 @@
 <x-layout>
-    <section class="section">
+    <section class="section container">
         <h1 class="text-xl font-bold text-black-200 mb-10"></h1>
         <div class="books__container">
-            <div class="flex  justify-center gap-20 book__details w-full bg-white p-5 rounded-[30px]">
+            <div class="flex  justify-center gap-20 book__details w-full bg-white p-10 rounded-[30px]">
                 <img class="w-full max-w-[300px] max-h-[400px] rounded-[20px] mb-3"
                     src="{{ asset('storage/' . $livro->imagem) }}" alt="{{ $livro->titulo }}">
                 <div class="book__content">

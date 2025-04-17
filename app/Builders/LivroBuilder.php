@@ -4,73 +4,42 @@ namespace App\Builders;
 
 use App\Models\Livro;
 use Illuminate\Http\UploadedFile;
-use PhpParser\Node\FunctionLike;
 
 class LivroBuilder
 {
-    protected array $data = [];
-    protected ?UploadedFile $imagem = null;
-    protected array $autores = [];
-    protected array $generos = [];
+    protected $livro;
 
-    public function setDados(array $data): static
+    public function criar(array $dados): self
     {
-        $this->data = $data;
+        $this->livro = new Livro($dados);
         return $this;
     }
 
-    public function setTitulo($titulo)
+    public function adicionarCamposEspecificos(array $dados): self
     {
-        $this->data['titulo'] = $titulo;
-        return $this;
-    }
+        switch ($dados['formato']) {
+            case 'fisico':
+                $this->livro->peso = $dados['peso'] ?? null;
+                $this->livro->dimensoes = $dados['dimensoes'] ?? null;
+                $this->livro->quantidade = $dados['quantidade'] ?? null;
+                break;
 
-    public function setAnoPublicacao($anoPublicacao)
-    {
-        $this->data['ano_publicacao'] = $anoPublicacao;
-        return $this;
-    }
+            case 'digital':
+                $this->livro->arquivo = $dados['arquivo'] ?? null;
+                break;
 
-    public function setDescricao($descricao)
-    {
-        $this->data['descricao'] = $descricao;
-        return $this;
-    }
-
-    public function setISBN($ISBN)
-    {
-        $this->data['isbn'] = $ISBN;
-        return $this;
-    }
-
-    public function setAutores(array $autores): static
-    {
-        $this->autores = $autores;
-        return $this;
-    }
-
-    public function setGeneros(array $generos): static
-    {
-        $this->generos = $generos;
-        return $this;
-    }
-
-    public function setImagem(?UploadedFile $imagem): static
-    {
-        $this->imagem = $imagem;
-        return $this;
-    }
-
-    public function build(): Livro
-    {
-        if ($this->imagem) {
-            $this->data['imagem'] = $this->imagem->store('capas', 'public');
+            case 'audiobook':
+                $this->livro->narrador = $dados['narrador'] ?? null;
+                $this->livro->tempo_duracao = $dados['tempo_duracao'] ?? null;
+                break;
         }
 
-        $livro = Livro::create($this->data);
-        $livro->autores()->attach($this->autores);
-        $livro->generos()->attach($this->generos);
+        return $this;
+    }
 
-        return $livro;
+    public function guardar(): Livro
+    {
+        $this->livro->save();
+        return $this->livro;
     }
 }

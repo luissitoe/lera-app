@@ -7,7 +7,7 @@
         @endif
         <div class="">
             <h1 class="text-xl font-bold text-black-200 mb-10">Lista de Livros</h1>
-            <table class="table-auto w-full border-collapse border border-border">
+            <table class="bg-white table-auto w-full border-collapse border border-border">
                 <thead>
                     <tr class="bg-gray-100 text-left">
                         <th class="border border-border px-4 py-2">#</th>

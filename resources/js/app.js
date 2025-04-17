@@ -2,6 +2,7 @@ import './bootstrap';
 import TomSelect from 'tom-select';
 import "tom-select/dist/css/tom-select.css";
 
+import 'flowbite';
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     new TomSelect("#formato", {
         plugins: ['remove_button'],
-        placeholder: "Selecione os generos",
+        placeholder: "Selecione o formato do livro",
     }) 
 });
+
+
+// Campos adicionais do livro

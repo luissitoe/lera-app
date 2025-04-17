@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "flowbite";
+
 @theme {
     --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -9,23 +11,24 @@
 }
 
 body {
-    margin-top: 80px;
+    @apply mt-[0px] bg-[#f9f9f9];
 }
 
 .container {
-    @apply max-w-[1024px] mx-auto;
+    @apply w-full max-w-[992px] mx-auto;
 }
 
 .section {
-    @apply py-12;
+    @apply pt-16;
 }
 
 .header {
-    @apply fixed top-0 left-0 w-full min-h-[80px] max-h-[80px] border-b-2 border-b-border flex items-center bg-white;
+    @apply bg-white w-full min-h-[80px] max-h-[80px] border-b-2 border-b-border flex items-center;
+    box-shadow: 0 8px 40px 15px rgba(0, 0, 0, 0.05);
 }
 
 .nav {
-    @apply flex items-center justify-between h-full;
+    @apply flex justify-between items-center h-full;
 }
 
 .nav__brand {
@@ -41,7 +44,8 @@ body {
 }
 
 .book__card {
-    box-shadow: 0 10px 80px 0 rgba(0, 0, 0, 0.08);
+    @apply bg-white;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.08);
 }
 
 .form {
@@ -49,9 +53,9 @@ body {
 }
 
 .form__label {
-    @apply block mb-2;
+    @apply block mb-2 font-medium;
 }
 
 .form__input {
-    @apply font-sans w-full border-2 border-border py-3 px-3 rounded-[15px];
+    @apply font-sans w-full border-2 border-border py-3 px-3 rounded-[15px] bg-white placeholder:text-gray-400;
 }
