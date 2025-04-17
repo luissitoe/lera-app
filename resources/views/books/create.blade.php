@@ -17,17 +17,11 @@
                     </div>
                     <div class="form__group">
                         <label class="form__label" for="">Género</label>
-                        <div class="flex items-center gap-1">
-                            <select class="form__input" name="generos[]" id="generos" multiple>
-                                @foreach ($generos as $genero)
-                                    <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
-                                @endforeach
-                            </select>
-                            <div
-                                class="btn w-[55px] h-[55px] bg-white border-2 border-border rounded-[12px] p-3 font-bold text-black text-lg flex items-center justify-center">
-                                +
-                            </div>
-                        </div>
+                        <select class="form__input" name="generos[]" id="generos" multiple>
+                            @foreach ($generos as $genero)
+                                <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form__group">
                         <label class="form__label" for="data_nascimento">Ano de Publicação</label>
@@ -47,21 +41,14 @@
                     </div>
                     <div class="form__group">
                         <label class="form__label" for="">Autor</label>
-
-                        <div class="flex items-center gap-1">
-                            <select id="autores" name="autores[]" class="form__input" multiple>
-                                @foreach ($autores as $autor)
-                                    <option value="{{ $autor->id }}"
-                                        {{ in_array($autor->id, old('autores', [])) ? 'selected' : '' }}>
-                                        {{ $autor->nome }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            <div
-                                class="btn w-[55px] h-[55px] bg-white border-2 border-border rounded-[12px] p-3 font-bold text-black text-lg flex items-center justify-center">
-                                +
-                            </div>
-                        </div>
+                        <select id="autores" name="autores[]" class="form__input" multiple>
+                            @foreach ($autores as $autor)
+                                <option value="{{ $autor->id }}"
+                                    {{ in_array($autor->id, old('autores', [])) ? 'selected' : '' }}>
+                                    {{ $autor->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form__group">
                         <label for="formato" class="form__label" for="formato">Formato do Livro</label>
@@ -97,6 +84,32 @@
         </div>
     </section>
 </x-layout>
+
+<button data-modal-target="autorModal" data-modal-toggle="autorModal"
+    class="btn w-[55px] h-[55px] border border-gray-300 rounded-xl text-xl font-bold flex items-center justify-center bg-white">
+    +
+</button>
+
+<div id="autorModal" tabindex="-1"
+    class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex items-center justify-center">
+    <div class="relative p-4 w-full max-w-md">
+        <div class="relative bg-white rounded-lg shadow">
+            <div class="p-4 border-b rounded-t  border-border">
+                <h3 class="text-lg font-semibold text-gray-900">Novo Autor</h3>
+            </div>
+            <form id="formAutor" class="p-4">
+                <input type="text" name="nome" placeholder="Nome" class="form__input w-full mb-3" required>
+                <textarea name="biografia" placeholder="Biografia" class="form__input w-full mb-3"></textarea>
+                <div class="flex justify-end gap-2">
+                    <button data-modal-hide="autorModal" type="button" class="btn">Cancelar</button>
+                    <button type="submit" class="btn--primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <script>
     function mostrarCamposPorFormato(formato) {
         const camposDiv = document.getElementById('campos-condicionais');

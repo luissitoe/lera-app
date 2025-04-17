@@ -23,13 +23,16 @@
                         <a class="sidebar__link" href="{{ route('home') }}">Início</a>
                     </li>
                     <li class="sidebar__item">
+                        <a href="{{ route('authors.create') }}" class="sidebar__link">Autor</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="{{ route('genres.create') }}" class="sidebar__link">Género</a>
+                    </li>
+                    <li class="sidebar__item">
                         <a href="{{ route('books.create') }}" class="sidebar__link">Adicionar Livro</a>
                     </li>
                     <li class="sidebar__item">
                         <a href="{{ route('books.index') }}" class="sidebar__link">Lista de Livros</a>
-                    </li>
-                    <li>
-                        <a class="sidebar__link" href="{{ route('books.index') }}">Livros</a>
                     </li>
                 </ul>
             </div>

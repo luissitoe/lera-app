@@ -7,8 +7,10 @@ use App\Models\Genero;
 use App\Models\Livro;
 use Illuminate\Http\Request;
 
-use App\Builders\LivroBuilder;
 use App\Builders\LivroDirector;
+use App\Builders\LivroFisicoBuilder;
+use App\Builders\LivroDigitalBuilder;
+use App\Builders\LivroAudiobookBuilder;
 
 class LivroController extends Controller
 {
@@ -25,20 +27,6 @@ class LivroController extends Controller
 
         return view('books.index', compact('livros'));
     }
-
-    // Listar os livros
-    /*  public function index(Request $request)
-        {
-            $query = Livro::with('autores', 'generos');
-            if ($request->filled('formato')) {
-                $query->where('formato', $request->formato);
-            }
-    
-            $livros = $query->latest()->get();
-    
-            return view('books.index', compact('livros'));
-        }*/
-
     // Exibir o formulário de registo de livros
     public function create()
     {
@@ -76,36 +64,21 @@ class LivroController extends Controller
             $validated['arquivo'] = $request->file('arquivo')->store('ebooks', 'public');
         }
 
-        $builder = new LivroBuilder();
-        $director = new LivroDirector($builder);
+        $director = new LivroDirector();
 
-        $livro = $director->build($validated);
+        $builder = match ($validated['formato']) {
+            'fisico' => new LivroFisicoBuilder(),
+            'digital' => new LivroDigitalBuilder(),
+            'audiobook' => new LivroAudiobookBuilder(),
+            default => throw new \Exception("Formato desconhecido"),
+        };
+
+        $livro = $director->build($builder, $validated);
         $livro->autores()->attach($request->autores);
         $livro->generos()->attach($request->generos);
 
         return redirect()->route('books.create')->with('success', 'Livro registado com sucesso!');
-
-        /*$livro = (new LivroBuilder)
-            ->setTitulo($validated['titulo'])
-            ->setAnoPublicacao($validated['ano_publicacao'])
-            ->setISBN($validated['isbn'])
-            ->setDescricao($validated['descricao'])
-            ->setImagem($request->file('imagem'))
-            ->setAutores($request->autores)
-            ->setGeneros($request->generos)
-            ->build();*/
-
-        /*   $livro = Livro::create($validated);
-        $livro->autores()->attach($request->autores);
-        $livro->generos()->attach($request->generos); */
     }
-
-    // public function edit()
-    // {
-    //     $autores = Autor::all();
-    //     $generos = Genero::all();
-    //     return view('books.edit', compact('autores', 'generos'));
-    // }
 
     public function update(Request $request,)
     {
@@ -148,10 +121,6 @@ class LivroController extends Controller
         $livro = Livro::with(['autores', 'generos'])->findOrFail($id);
         return view('books.edit', compact('livro'));
     }
-
-
-
-
 
     public function destroy($id)
     {
