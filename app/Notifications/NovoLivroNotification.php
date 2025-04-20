@@ -44,7 +44,7 @@ class NovoLivroNotification extends Notification
             ->line('📖 Título: ' . $this->livro->titulo)
             ->line('🗓 Ano: ' . $this->livro->ano_publicacao)
             ->line('✍️ ISBN: ' . $this->livro->isbn)
-            ->action('Ver Livro', url('/books/show' . $this->livro->id))
+            ->action('Ver Livro', url('/books/show/' . $this->livro->id))
             ->line('Obrigado por usar o sistema Lera!');
     }
 

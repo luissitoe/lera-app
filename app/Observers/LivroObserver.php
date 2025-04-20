@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Livro;
 use App\Models\User;
+use App\Notifications\LivroEntregueNotification;
 use App\Notifications\NovoLivroNotification;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
@@ -18,6 +19,7 @@ class LivroObserver
         Log::info('Novo livro registado: ' . $livro->titulo);
         Notification::route('mail', 'app@lera.com')
             ->notify(new NovoLivroNotification($livro));
+
     }
 
     /**

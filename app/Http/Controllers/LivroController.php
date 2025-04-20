@@ -6,6 +6,8 @@ use App\Models\Autor;
 use App\Models\Genero;
 use App\Models\Livro;
 use Illuminate\Http\Request;
+use App\Factories\MetodoEntregaFactory; //Importar o Factory
+
 
 use App\Builders\LivroDirector;
 use App\Builders\LivroFisicoBuilder;
@@ -127,5 +129,16 @@ class LivroController extends Controller
         $livro = Livro::findOrFail($id);
         $livro->delete();
         return redirect()->back()->with('success', 'Deletado com Sucesso');
+    }
+
+    //USo do Method Factory no LivroController
+    public function entregarLivro($id)
+    {
+        $livro = Livro::findOrFail($id);
+
+        $metodoEntrega = MetodoEntregaFactory::criar($livro);
+        $mensagemEntrega = $metodoEntrega->entregar($livro);
+
+        return view('books.entrega', compact('livro', 'mensagemEntrega'));
     }
 }

@@ -28,9 +28,11 @@
                             <td class="border border-border px-4 py-2">{{ $livro->ano_publicacao }}</td>
                             <td class="border border-border px-4 py-2">{{ $livro->isbn }}</td>
                             <td class="border border-border px-4 py-2 flex gap-2">
+                                <a href="{{ route('books.entregar', $livro->id) }}"
+                                    class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">Entregar</a>
+
                                 <a href="{{ route('books.edit', $livro->id) }}"
                                     class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Editar</a>
-
                                 <form action="{{ route('books.destroy', $livro->id) }}" method="POST"
                                     onsubmit="return confirm('Tem certeza que deseja excluir este livro?');">
                                     @csrf

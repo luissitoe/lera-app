@@ -9,6 +9,7 @@ use App\Models\Livro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 Route::get('/', function (Request $request) {
     $livros = Livro::with('autores', 'generos')->latest()->get();
     return view('welcome', compact('livros'));
@@ -37,13 +38,15 @@ Route::post('/authors/save', [AutorController::class, 'save'])->name('authors.sa
 Route::get('/genres/create', [GeneroController::class, 'create'])->name('genres.create');
 Route::post('/genres/save', [GeneroController::class, 'save'])->name('genres.save');
 
-// Livros 
+// Livros
 Route::get('/books/index', [LivroController::class, 'index'])->name('books.index');
 Route::get('/books/create', [LivroController::class, 'create'])->name('books.create');
 Route::get('/books/show/{book}', [LivroController::class, 'show'])->name('books.show');
 Route::post('/books/save', [LivroController::class, 'save'])->name('books.save');
 Route::get('/books/edit/{livro}', [LivroController::class, 'edit'])->name('books.edit');
 Route::delete('/books/destroy/{livro}', [LivroController::class, 'destroy'])->name('books.destroy');
+
+Route::get('/books/{id}/entregar', [LivroController::class, 'entregarLivro'])->name('books.entregar');
 
 
 require __DIR__ . '/auth.php';
